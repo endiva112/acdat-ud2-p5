@@ -8,5 +8,11 @@ public class Main {
         4. Guardar cada Persona en una lista (ArrayList).
         5. Imprimir en consola los datos de todas las personas almacenadas en la lista.
         */
+
+        /*
+        TODO:
+        (Opcional) Divide las funcionalidades del main() en métodos y crea un método que pueda pedir datos por
+        terminal y almacenarlos en el fichero CSV.
+         */
     }
 }
