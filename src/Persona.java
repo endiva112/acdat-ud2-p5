@@ -1,11 +1,14 @@
-public class Persona {
+import java.io.Serializable;
+
+public class Persona implements Serializable {
     private String nombre;
     private String apellido;
     private int edad;
     private String email;
     private String telefono;
 
-    public Persona() {}
+    public Persona() {
+    }
 
     public Persona(String nombre, String apellido, int edad, String email, String telefono) {
         this.nombre = nombre;
@@ -15,6 +18,14 @@ public class Persona {
         this.telefono = telefono;
     }
 
+    public Persona(String linea) {
+        String[] partes = linea.split(",");
+        this.nombre = partes[0];
+        this.apellido = partes[1];
+        this.edad = Integer.parseInt(partes[2]);
+        this.email = partes[3];
+        this.telefono = partes[4];
+    }
     /*
      * TODO: Crea el constructor de la clase Persona que reciba como parámetro una cadena
      * de caracteres con los valores separados por comas (,)
@@ -26,6 +37,9 @@ public class Persona {
      * 3. Convertir el tercer valor (edad) a entero.
      * 4. No lanzar excepciones. Si algo falla, asigna valores por defecto.
      */
+
+
+
 
     public String getNombre() {
         return nombre;
