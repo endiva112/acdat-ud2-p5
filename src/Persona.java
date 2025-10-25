@@ -1,14 +1,11 @@
-import java.io.Serializable;
-
-public class Persona implements Serializable {
+public class Persona {
     private String nombre;
     private String apellido;
     private int edad;
     private String email;
     private String telefono;
 
-    public Persona() {
-    }
+    public Persona() {}
 
     public Persona(String nombre, String apellido, int edad, String email, String telefono) {
         this.nombre = nombre;
@@ -18,28 +15,14 @@ public class Persona implements Serializable {
         this.telefono = telefono;
     }
 
-    public Persona(String linea) {
-        String[] partes = linea.split(",");
-        this.nombre = partes[0];
-        this.apellido = partes[1];
-        this.edad = Integer.parseInt(partes[2]);
-        this.email = partes[3];
-        this.telefono = partes[4];
+    public Persona(String cadenaSinProcesar) {
+        String[] datos = cadenaSinProcesar.split(",", 5);
+        this.nombre = datos[0] != null ? datos[0] : "";
+        this.apellido = datos[1] != null ? datos[1] : "";
+        this.edad = Integer.parseInt(datos[2] != null ? datos[2] : "-1");
+        this.email = datos[3] != null ? datos[3] : "";
+        this.telefono = datos[4] != null ? datos[4] : "";
     }
-    /*
-     * TODO: Crea el constructor de la clase Persona que reciba como parámetro una cadena
-     * de caracteres con los valores separados por comas (,)
-     * Ejemplo de cadena: "Ana,Perez,25,ana.perez@example.com,+34911111111"
-     *
-     * El constructor debe:
-     * 1. Separar los valores usando split(",").
-     * 2. Asignar los valores a los atributos correspondientes.
-     * 3. Convertir el tercer valor (edad) a entero.
-     * 4. No lanzar excepciones. Si algo falla, asigna valores por defecto.
-     */
-
-
-
 
     public String getNombre() {
         return nombre;
